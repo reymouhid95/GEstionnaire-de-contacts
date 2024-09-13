@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkUp</title>
+    <link rel="stylesheet" href="../public/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <div class="container">
+        <a class="navbar-brand fs-2 text-white fw-bold" href="/contacts"
+          >LinkUp</a
+        >
+        <% if (locals.user) { %>
+        <span class="navbar-text ms-auto text-white fw-bold">
+          Bienvenue, <%= user.username %> |
+          <a href="/logout" class="btn btn-sm btn-info text-white"
+            ><i class="bi bi-box-arrow-left fs-4"></i
+          ></a>
+        </span>
+        <% } else { %>
+        <a href="/login" class="btn btn-sm btn-info ms-auto text-white"
+          ><i class="bi bi-box-arrow-in-right fs-4"></i
+        ></a>
+        <% } %>
+      </div>
+    </nav>
+
+    <div class="container-fluid mt-4"><%- body %></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

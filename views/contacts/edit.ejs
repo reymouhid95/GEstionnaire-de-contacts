@@ -1,0 +1,55 @@
+<div class="d-flex justify-content-center align-items-center mt-5">
+  <div class="text-center">
+    <h1 class="text-center fw-bold">Mise à jour du contact</h1>
+    <a href="/contacts" class="btn btn-info my-3"
+      ><i class="bi bi-arrow-left fs-4"></i
+    ></a>
+    <form action="/contacts/<%= contact._id %>?_method=PUT" method="POST">
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          value="<%= contact.name %>"
+          placeholder="Nom"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          value="<%= contact.email %>"
+          placeholder="Email"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="tel"
+          class="form-control"
+          id="phone"
+          name="phone"
+          value="<%= contact.phone %>"
+          placeholder="Téléphone"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <textarea
+          class="form-control"
+          id="address"
+          name="address"
+          placeholder="Adresse"
+          required
+        >
+<%= contact.address %></textarea
+        >
+      </div>
+      <button type="submit" class="btn btn-primary">Mettre à jour</button>
+    </form>
+  </div>
+</div>

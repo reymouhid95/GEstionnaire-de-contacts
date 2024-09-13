@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Erreur</h1>
+  <p><%= error.message || 'Une erreur s\'est produite.' %></p>
+  <% if (process.env.NODE_ENV !== 'production') { %>
+  <pre><%= error.stack %></pre>
+  <% } %>
+  <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+</div>
